@@ -5,7 +5,7 @@ import { Separator } from "@/components/ui/separator";
 import { Dna, HatGlasses } from "lucide-react";
 import { TbArrowAutofitHeight, TbBoltFilled, TbWeight } from "react-icons/tb";
 
-const typeColors = {
+export const typeColors = {
   normal: "bg-gray-400",
   fire: "bg-red-500",
   water: "bg-blue-500",
@@ -85,9 +85,9 @@ export default function DetailsContent() {
         </div>
         <div className="mt-2 flex flex-col gap-3 w-full">
           <h3 className="text-sm font-medium">Power Base Stats:</h3>
-          <div className="grid grid-cols-1 gap-3 w-full">
+          <ul className="grid grid-cols-1 gap-3 w-full">
             {Array.from({ length: 2 }).map((_, i) => (
-              <div
+              <li
                 key={i}
                 className="flex gap-3 items-center justify-between w-full"
               >
@@ -97,9 +97,9 @@ export default function DetailsContent() {
                 </h3>
                 <Progress value={33} />
                 <Badge>33</Badge>
-              </div>
+              </li>
             ))}
-          </div>
+          </ul>
         </div>
       </div>
     </>

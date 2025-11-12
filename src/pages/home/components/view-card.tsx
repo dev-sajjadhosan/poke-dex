@@ -21,7 +21,7 @@ export default function ViewCard() {
               onClick={() => setSelect(i)}
               className={`p-3 rounded-lg border-2 active:scale-95 transition-normal duration-100 cursor-pointer ${
                 select === i
-                  ? "border-neutral-500 bg-primary/20"
+                  ? "border-neutral-500 bg-primary/70"
                   : "border-transparent scale-90 bg-secondary"
               }`}
             />

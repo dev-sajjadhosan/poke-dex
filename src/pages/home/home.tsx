@@ -5,14 +5,14 @@ import ViewCard from "./components/view-card";
 import DetailsContent from "./components/details-content";
 import FloatNav from "./components/float-nav";
 import { TabObject, usePokeStore } from "@/store/usePokeStore";
-import { TbQuestionMark } from "react-icons/tb";
-import { Button } from "@/components/ui/button";
-import { CornerLeftUp } from "lucide-react";
+
 import WrongCard from "@/components/custom_ui/wrong-card";
+import OverviewSection from "./components/overview";
+import StatsSection from "./components/stats";
 
 export default function HomePage() {
   const [isFind, setIsFind] = useState<boolean>(true);
-  const { tab, setTab } = usePokeStore();
+  const { tab } = usePokeStore();
   return (
     <>
       <div className="flex flex-col gap-2 items-center justify-center h-screen ">
@@ -26,9 +26,9 @@ export default function HomePage() {
               {tab === TabObject.default ? (
                 <DetailsContent />
               ) : tab === TabObject.overview ? (
-                <WrongCard />
+                <OverviewSection />
               ) : tab === TabObject.stats ? (
-                <WrongCard />
+                <StatsSection />
               ) : tab === TabObject.moves ? (
                 <WrongCard />
               ) : tab === TabObject.breeding ? (
