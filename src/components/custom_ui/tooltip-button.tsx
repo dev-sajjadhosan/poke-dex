@@ -60,7 +60,7 @@ export default function TooltipBtn({
         </Button>
       </TooltipTrigger>
       <TooltipContent align={align} side={side}>
-        <p>{label}</p>
+        <p className="capitalize">{label}</p>
       </TooltipContent>
     </Tooltip>
   );
