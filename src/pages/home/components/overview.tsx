@@ -7,7 +7,7 @@ import { TbShieldFilled } from "react-icons/tb";
 export default function OverviewSection() {
   return (
     <>
-      <div className="flex flex-col gap-2 w-full h-full">
+      <div className="flex flex-col gap-4 w-full h-full">
         <h3 className="text-sm font-semibold">Type Effectiveness:</h3>
         <ul className="flex flex-wrap items-center gap-2">
           {Array.from({ length: 3 }).map((_, i) => (
@@ -50,7 +50,7 @@ export default function OverviewSection() {
           <div className="flex items-center gap-2 capitalize bg-secondary w-xs py-2.5 px-5 rounded-md">
             <MapPinHouse size={19} className="text-neutral-500" />
             <Separator orientation="vertical" className="h-6!" />
-            <h3 className="text-sm capitalize">rare</h3>
+            <h3 className="text-sm capitalize mx-auto">rare</h3>
           </div>
           <div className="flex items-center gap-2 capitalize bg-secondary w-full py-2.5 px-5 rounded-md">
             <Radar className="text-neutral-500" />

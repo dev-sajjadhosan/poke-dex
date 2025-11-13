@@ -1,9 +1,11 @@
+import PokemonBadge from "@/components/custom_ui/pokemon-badge";
 import SpacialSymbol from "@/components/custom_ui/spcial-symbol";
 import { Badge } from "@/components/ui/badge";
-import { Progress } from "@/components/ui/progress";
+
 import { Separator } from "@/components/ui/separator";
+
 import { Dna, HatGlasses } from "lucide-react";
-import { TbArrowAutofitHeight, TbBoltFilled, TbWeight } from "react-icons/tb";
+import { TbArrowAutofitHeight, TbWeight } from "react-icons/tb";
 
 export const typeColors = {
   normal: "bg-gray-400",
@@ -29,39 +31,43 @@ export const typeColors = {
 export default function DetailsContent() {
   return (
     <>
-      <div className="flex flex-col gap-3 w-full h-full">
+      <div className="flex flex-col gap-2 w-full h-full">
         <h1 className="text-xl mb-2 font-normal">
           <SpacialSymbol icon="|>" /> Know About Your Poke ?
         </h1>
-        <div className="flex items-start gap-1">
+        <div className="flex flex-col gap-2">
           <h1 className="text-3xl">Pikachu</h1>
           <div className="flex items-center gap-1">
-            <Badge className={`uppercase `}>electric</Badge>
-            <Badge className={`uppercase `}>electric</Badge>
-            <Badge className={`uppercase `}>electric</Badge>
+            <PokemonBadge type="electric">Electric</PokemonBadge>
+            <PokemonBadge type="ground">Ground</PokemonBadge>
+            <PokemonBadge type="ghost">Ghost</PokemonBadge>
           </div>
         </div>
-        <h3 className="text-sm font-family-fira-code!">
+        <h3 className="text-sm font-family-fira-code! mt-3">
           <SpacialSymbol icon="=>>" /> The Mouse Pokémon
         </h3>
         <p className="text-sm">
           <SpacialSymbol icon="=>>" /> When several of these POKéMON gather,
           their electricity could build and cause lightning storms.
         </p>
-        <div className="flex flex-col mt-1 w-full">
+        <div className="flex flex-col gap-3 mt-1 w-full">
           <p className="text-sm">
             <SpacialSymbol icon="=>>" /> Basic Information:
           </p>
           <div className="flex w-full gap-5 justify-between">
-            <div className="flex items-center gap-2 w-full p-2 rounded-md text-sm">
-              <TbArrowAutofitHeight size={19} className="text-primary/70" />
-              <Separator orientation="vertical" className="h-6!" />
-              Height: <span className="">0.4m</span>
+            <div className="flex flex-col gap-2 w-full p-6 bg-secondary rounded-lg">
+              <TbArrowAutofitHeight size={19} />
+              <Separator className="w-14!" />
+              <h3 className="text-sm">
+                Height: <span className="">0.4m</span>
+              </h3>
             </div>
-            <div className="flex items-center gap-2 w-full p-2 rounded-md text-sm">
-              <TbWeight size={19} className="text-primary/70" />
-              <Separator orientation="vertical" className="h-6!" />
-              Weight: <span className="">6kg</span>
+            <div className="flex flex-col gap-2 w-full p-6 bg-secondary rounded-lg">
+              <TbWeight size={19} />
+              <Separator className="w-14!" />
+              <h3 className="text-sm">
+                Weight: <span className="">6kg</span>
+              </h3>
             </div>
           </div>
         </div>
@@ -83,7 +89,7 @@ export default function DetailsContent() {
             ))}
           </ul>
         </div>
-        <div className="mt-2 flex flex-col gap-3 w-full">
+        {/* <div className="mt-2 flex flex-col gap-3 w-full">
           <h3 className="text-sm font-medium">Power Base Stats:</h3>
           <ul className="grid grid-cols-1 gap-3 w-full">
             {Array.from({ length: 2 }).map((_, i) => (
@@ -100,7 +106,7 @@ export default function DetailsContent() {
               </li>
             ))}
           </ul>
-        </div>
+        </div> */}
       </div>
     </>
   );

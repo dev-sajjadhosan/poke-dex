@@ -9,6 +9,9 @@ import { TabObject, usePokeStore } from "@/store/usePokeStore";
 import WrongCard from "@/components/custom_ui/wrong-card";
 import OverviewSection from "./components/overview";
 import StatsSection from "./components/stats";
+import MovesSection from "./components/moves";
+import EvolutionSection from "./components/evolution";
+import BreedingSection from "./components/breeding";
 
 export default function HomePage() {
   const [isFind, setIsFind] = useState<boolean>(true);
@@ -30,13 +33,13 @@ export default function HomePage() {
               ) : tab === TabObject.stats ? (
                 <StatsSection />
               ) : tab === TabObject.moves ? (
-                <WrongCard />
-              ) : tab === TabObject.breeding ? (
-                <WrongCard />
+                <MovesSection />
               ) : tab === TabObject.evolution ? (
-                <WrongCard />
+                <EvolutionSection />
+              ) : tab === TabObject.breeding ? (
+                <BreedingSection />
               ) : (
-                ""
+                <WrongCard />
               )}
             </div>
           </div>
