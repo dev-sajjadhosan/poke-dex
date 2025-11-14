@@ -1,10 +1,11 @@
 import PokemonBadge from "@/components/custom_ui/pokemon-badge";
 import SpacialSymbol from "@/components/custom_ui/spcial-symbol";
 import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 
 import { Separator } from "@/components/ui/separator";
 
-import { Dna, HatGlasses } from "lucide-react";
+import { Dna, HatGlasses, Plus } from "lucide-react";
 import { TbArrowAutofitHeight, TbWeight } from "react-icons/tb";
 
 export const typeColors = {
@@ -36,7 +37,12 @@ export default function DetailsContent() {
           <SpacialSymbol icon="|>" /> Know About Your Poke ?
         </h1>
         <div className="flex flex-col gap-2">
-          <h1 className="text-3xl">Pikachu</h1>
+          <div className="flex items-center justify-between w-full">
+            <h1 className="text-3xl">Pikachu</h1>
+            <Button size={"sm"}>
+              Save <Plus />
+            </Button>
+          </div>
           <div className="flex items-center gap-1">
             <PokemonBadge type="electric">Electric</PokemonBadge>
             <PokemonBadge type="ground">Ground</PokemonBadge>

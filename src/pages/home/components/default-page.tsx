@@ -8,8 +8,8 @@ export default function DefaultPage({
 }) {
   return (
     <>
-      <div className="flex flex-col gap-2 items-center justify-center">
-        <img src="logo.png" alt="" width={100} />
+      <div className="flex flex-col gap-3 items-center justify-center">
+        <img src="logo.png" alt="" width={70} />
         <h1 className="text-4xl font-family-audiowide!">Pokedex</h1>
         <h3 className="text-lg transition-normal">
           Find your favourite

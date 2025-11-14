@@ -1,8 +1,10 @@
-import { Atom, Inbox, Moon, Store, User2 } from "lucide-react";
+import { Atom, Inbox, Moon, Search, Store, Sun, User2 } from "lucide-react";
 import TooltipBtn from "./tooltip-button";
 import { Button } from "../ui/button";
+import { usePokeStore } from "@/store/usePokeStore";
 
 export default function Header() {
+  const { setTheme, theme, setIsSection } = usePokeStore();
   return (
     <>
       <div className="flex items-start justify-between w-full">
@@ -16,10 +18,21 @@ export default function Header() {
           </h3>
         </div>
         <div className="flex items-center gap-3">
-          <Button className="group" size={'sm'}>
+          <Button size={"sm"} onClick={() => setIsSection("search")}>
+            <Search /> Search
+          </Button>
+          <Button
+            className="group"
+            size={"sm"}
+            onClick={() => setIsSection("generate-card")}
+          >
             <Atom className="group-hover:animate-spin" /> Generate
           </Button>
-          <TooltipBtn icon={Moon} label="Dark" />
+          <TooltipBtn
+            icon={theme === "light" ? Moon : Sun}
+            label={theme === "light" ? "Dark" : "light"}
+            action={() => setTheme(theme === "dark" ? "light" : "dark")}
+          />
           <TooltipBtn icon={User2} label="Developer" />
           <TooltipBtn icon={Store} label="Store" />
           <TooltipBtn icon={Inbox} label="Share History" />
