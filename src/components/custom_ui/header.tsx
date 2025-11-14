@@ -33,7 +33,11 @@ export default function Header() {
             label={theme === "light" ? "Dark" : "light"}
             action={() => setTheme(theme === "dark" ? "light" : "dark")}
           />
-          <TooltipBtn icon={User2} label="Developer" />
+          <TooltipBtn
+            icon={User2}
+            label="Developer"
+            action={() => setIsSection("developer")}
+          />
           <TooltipBtn icon={Store} label="Store" />
           <TooltipBtn icon={Inbox} label="Share History" />
         </div>

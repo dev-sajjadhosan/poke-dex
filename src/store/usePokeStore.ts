@@ -2,7 +2,14 @@ import { create } from "zustand";
 import { persist } from "zustand/middleware";
 
 export type Theme = "light" | "dark" | "system";
-export type Sections = 'search' | 'generate-card' | null
+export type Sections =
+  | "search"
+  | "generate-card"
+  | "store"
+  | "share-history"
+  | "developer"
+  | null;
+
 type Tab =
   | "default"
   | "overview"

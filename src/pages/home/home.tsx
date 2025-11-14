@@ -13,6 +13,7 @@ import EvolutionSection from "./components/evolution";
 import BreedingSection from "./components/breeding";
 import SearchSection from "./components/search-section";
 import GenerateCardSection from "./components/generate-card-section";
+import DeveloperSection from "../developer-section/developer-section";
 
 export default function HomePage() {
   const { tab, isSection, isFind, setIsFind } = usePokeStore();
@@ -25,6 +26,8 @@ export default function HomePage() {
               <SearchSection />
             ) : isSection === "generate-card" ? (
               <GenerateCardSection />
+            ) : isSection === "developer" ? (
+              <DeveloperSection />
             ) : (
               <>
                 <Header />
