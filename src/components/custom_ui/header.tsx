@@ -2,6 +2,7 @@ import { Atom, Inbox, Moon, Search, Store, Sun, User2 } from "lucide-react";
 import TooltipBtn from "./tooltip-button";
 import { Button } from "../ui/button";
 import { usePokeStore } from "@/store/usePokeStore";
+import { toast } from "sonner";
 
 export default function Header() {
   const { setTheme, theme, setIsSection } = usePokeStore();
@@ -38,8 +39,26 @@ export default function Header() {
             label="Developer"
             action={() => setIsSection("developer")}
           />
-          <TooltipBtn icon={Store} label="Store" />
-          <TooltipBtn icon={Inbox} label="Share History" />
+          <TooltipBtn
+            icon={Store}
+            label="Store"
+            action={() =>
+              toast.info("Next Update. Coming Soon", {
+                description:
+                  "Now The Developer is currently is learning new tech and upgrading skill.",
+              })
+            }
+          />
+          <TooltipBtn
+            icon={Inbox}
+            label="Share History"
+            action={() =>
+              toast.info("Next Update. Coming Soon", {
+                description:
+                  "Now The Developer is currently is learning new tech and upgrading skill.",
+              })
+            }
+          />
         </div>
       </div>
     </>

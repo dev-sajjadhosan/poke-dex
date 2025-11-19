@@ -4,11 +4,13 @@ import { Input } from "@/components/ui/input";
 import { Separator } from "@/components/ui/separator";
 import { usePokeStore } from "@/store/usePokeStore";
 import { CornerLeftUp, Search } from "lucide-react";
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 export default function SearchSection() {
-  const { setIsSection } = usePokeStore();
-  const [select, setSelect] = useState(0);
+  const { setIsSection, getData, setSearch, isFind } = usePokeStore();
+  const [_, setSelect] = useState(0);
+
+  const searchRef = useRef<HTMLInputElement>(null);
 
   return (
     <>
@@ -20,8 +22,17 @@ export default function SearchSection() {
             <Search size={19} />
             <Separator orientation="vertical" className="h-6!" />
             <Input
+              ref={searchRef}
               placeholder="Search by name, id"
               className="bg-transparent! border-0"
+              onKeyDown={(e) => {
+                const key = e.key.toLowerCase();
+                if (key === "enter") {
+                  setSearch(searchRef.current?.value ?? "");
+                  getData(searchRef.current?.value ?? "");
+                  setIsSection("default");
+                }
+              }}
             />
             {/* <Button variant={"ghost"}>Search</Button> */}
           </div>
@@ -46,7 +57,12 @@ export default function SearchSection() {
           <Button
             size={"sm"}
             variant={"secondary"}
-            onClick={() => setIsSection(null)}
+            onClick={() => {
+              if (isFind) {
+                setIsSection("search");
+              }
+              setIsSection("default");
+            }}
           >
             <CornerLeftUp /> back to home
           </Button>

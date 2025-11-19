@@ -1,5 +1,6 @@
+import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Search } from "lucide-react";
+import { Construction, Search } from "lucide-react";
 
 export default function DefaultPage({
   setIsFind,
@@ -8,19 +9,28 @@ export default function DefaultPage({
 }) {
   return (
     <>
-      <div className="flex flex-col gap-3 items-center justify-center">
-        <img src="logo.png" alt="" width={70} />
-        <h1 className="text-4xl font-family-audiowide!">Pokedex</h1>
-        <h3 className="text-lg transition-normal">
-          Find your favourite
-          <span className="bg-orange-600 text-primary-foreground px-3 uppercase">
-            pokemon
-          </span>
-          here.
-        </h3>
-        <Button onClick={() => setIsFind(true)}>
-          <Search /> Search for Poke Buddy
-        </Button>
+      <div className="flex flex-col gap-28 items-center justify-center h-full">
+        <Badge
+          variant={"secondary"}
+          className="flex items-center gap-2 px-6 py-2"
+        >
+          <Construction /> This Site Is Under Construction.
+        </Badge>
+
+        <div className="flex flex-col items-center justify-center gap-3">
+          <img src="logo.png" alt="" width={70} />
+          <h1 className="text-4xl font-family-audiowide!">Pokedex</h1>
+          <h3 className="text-lg transition-normal capitalize">
+            Find & explore your favourite
+            <span className="bg-orange-600 text-primary px-3 font-extrabold uppercase mx-3 rounded-sm">
+              pokemon
+            </span>
+            here.
+          </h3>
+          <Button onClick={() => setIsFind(true)}>
+            <Search /> Search for Poke Buddy
+          </Button>
+        </div>
       </div>
     </>
   );

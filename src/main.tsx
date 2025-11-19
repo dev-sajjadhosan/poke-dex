@@ -8,7 +8,7 @@ import { Toaster } from "./components/ui/sonner";
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <ThemeProvider defaultTheme="dark">
-      <Toaster />
+      <Toaster richColors />
       <HomePage />
     </ThemeProvider>
   </StrictMode>
