@@ -1,5 +1,4 @@
 import type { PokemonData } from "@/types/pokemon-data-types";
-import image from "../../../assets/demo.png";
 import { Badge } from "@/components/ui/badge";
 
 export default function EvolutionSection({
@@ -11,7 +10,7 @@ export default function EvolutionSection({
     <>
       <div className="flex flex-col gap-3 w-full h-full">
         <h3 className="text-sm font-medium capitalize">{data?.name} Evolution Chain</h3>
-        <div className="mt-5 flex gap-5 items-center justify-between h-full  rotate-30">
+        <div className="mt-5 flex gap-5 items-center justify-between h-96 lg:h-full rotate-30">
           {data?.evolution.map((e, i) => (
             <div
               key={i}

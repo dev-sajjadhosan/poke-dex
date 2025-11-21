@@ -12,23 +12,41 @@ export default function Header() {
         <div className="flex flex-col">
           <div className="flex items-center gap-2">
             <img src="logo.png" alt="Pokedex" width={30} />
-            <h1 className="text-2xl font-family-audiowide!">Poke-dex</h1>
+            <h1 className="text-2xl font-family-audiowide! hidden md:flex">
+              Poke-dex
+            </h1>
           </div>
-          <h3 className="text-sm capitalize">
+          <h3 className="text-sm capitalize hidden lg:flex">
             This project was build for only Developer hobby.
           </h3>
         </div>
         <div className="flex items-center gap-3">
-          <Button size={"sm"} onClick={() => setIsSection("search")}>
-            <Search /> Search
-          </Button>
-          <Button
-            className="group"
-            size={"sm"}
-            onClick={() => setIsSection("generate-card")}
-          >
-            <Atom className="group-hover:animate-spin" /> Generate
-          </Button>
+          <div className="hidden md:flex items-center gap-3">
+            <Button size={"sm"} onClick={() => setIsSection("search")}>
+              <Search /> Search
+            </Button>
+            <Button
+              className="group"
+              size={"sm"}
+              onClick={() => setIsSection("generate-card")}
+            >
+              <Atom className="group-hover:animate-spin" /> Generate
+            </Button>
+          </div>
+          <div className="md:hidden flex items-center gap-3">
+            <TooltipBtn
+              variant="default"
+              icon={Search}
+              label="Search"
+              action={() => setIsSection("search")}
+            />
+            <TooltipBtn
+              variant="default"
+              icon={Atom}
+              label="Generate"
+              action={() => setIsSection("generate-card")}
+            />
+          </div>
           <TooltipBtn
             icon={theme === "light" ? Moon : Sun}
             label={theme === "light" ? "Dark" : "light"}

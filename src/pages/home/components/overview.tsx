@@ -86,8 +86,8 @@ export default function OverviewSection({
           ))}
         </ul>
         <h3 className="text-sm font-semibold">Habitat && Rarity</h3>
-        <div className="flex items-center gap-3">
-          <div className="flex items-center gap-2 capitalize bg-secondary w-xs py-2.5 px-5 rounded-md">
+        <div className="flex flex-col md:flex-row md:items-center gap-3 w-full">
+          <div className="flex items-center gap-2 capitalize bg-secondary md:w-xs py-2.5 px-5 rounded-md">
             <MapPinHouse size={19} className="text-neutral-300" />
             <Separator orientation="vertical" className="h-6!" />
             <h3 className="text-sm capitalize mx-auto">

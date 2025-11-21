@@ -7,7 +7,13 @@ import {
   TrafficCone,
   TrendingUp,
   Zap,
+  type LucideIcon,
 } from "lucide-react";
+
+interface Tab {
+  label: string;
+  icon: LucideIcon;
+}
 
 const tabs = [
   { label: "default", icon: TrafficCone },
@@ -24,8 +30,8 @@ export default function FloatNav() {
   const { tab, setTab } = usePokeStore();
   return (
     <>
-      <div className="flex flex-col gap-3 bg-transparent rounded-lg w-fit h-fit px-2 py-5">
-        {tabs.map((n, i) => (
+      <div className="flex lg:flex-col gap-7 lg:gap-3 bg-transparent rounded-lg w-fit h-fit px-2 py-5">
+        {tabs.map((n: Tab, i) => (
           <TooltipBtn
             key={i}
             variant={tab === n.label ? "default" : "ghost"}

@@ -18,7 +18,8 @@ type Tab =
   | "stats"
   | "moves"
   | "evolution"
-  | "breeding";
+  | "breeding"
+  | string;
 
 export const TabObject = {
   default: "default",

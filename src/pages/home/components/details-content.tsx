@@ -103,15 +103,15 @@ export default function DetailsContent({ data }: { data: PokemonData | null }) {
 
         <div className="mt-2 flex flex-col gap-3 w-full">
           <h3 className="text-sm font-medium">Abilities:</h3>
-          <ul className="grid grid-cols-2 gap-3 w-full">
+          <ul className="grid md:grid-cols-2 gap-3 w-full">
             {data?.abilities.slice(0, 2).map((a: Ability, i: number) => (
               <li
                 key={i}
-                className="flex items-center gap-2 capitalize bg-secondary w-full py-2 px-5 rounded-md"
+                className="flex items-center gap-2 capitalize bg-secondary w-full py-3 px-5 rounded-md"
               >
                 <Dna size={19} className="text-neutral-600" />
                 <Separator orientation="vertical" className="h-6!" />
-                <p className="text-sm">{a.name.replace("-", "")}</p>
+                <p className="text-sm">{a.name.replace("-", " ")}</p>
                 {a.isHidden && (
                   <Badge className="ml-auto px-3 py-1.5" variant={"outline"}>
                     <HatGlasses /> Hidden

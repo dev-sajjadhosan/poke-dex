@@ -52,7 +52,7 @@ export default function MovesSection({ data }: { data: PokemonData | null }) {
             <Badge variant={"default"}>{data?.moves.length}</Badge>
           </div>
         </div>
-        <ul className="grid grid-cols-2 gap-3 w-full">
+        <ul className="grid md:grid-cols-2 gap-3 w-full">
           {data?.moves
             .slice(pages[current]?.first, pages[current]?.last)
             .map((m, i) => (
