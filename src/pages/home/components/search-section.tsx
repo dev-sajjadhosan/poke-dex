@@ -14,11 +14,11 @@ export default function SearchSection() {
 
   return (
     <>
-      <div className="flex flex-col h-full w-full">
-        <div className="flex flex-col gap-5 items-center justify-center h-full w-3xl mx-auto">
+      <div className="flex flex-col h-150 lg:h-full w-full">
+        <div className="flex flex-col gap-5 items-center justify-center h-full lg:w-3xl mx-auto">
           <h1 className="text-3xl font-family-audiowide!">Poke-DEX</h1>
           <h3 className="text-lg capitalize">search your pokemon here...</h3>
-          <div className="flex items-center gap-3 bg-secondary px-5 py-2 rounded-xl w-xl">
+          <div className="flex items-center gap-3 bg-secondary px-5 py-2 rounded-xl w-full md:w-xl">
             <Search size={19} />
             <Separator orientation="vertical" className="h-6!" />
             <Input
@@ -40,8 +40,8 @@ export default function SearchSection() {
             <h3 className="text-sm text-muted-foreground">
               Here are some pokemon ?
             </h3>
-            <div className="flex items-center gap-3">
-              {Array.from({ length: 7 }).map((_, i) => (
+            <div className="flex flex-wrap items-center gap-3">
+              {Array.from({ length: 5 }).map((_, i) => (
                 <Avatar
                   key={i}
                   onClick={() => setSelect(i)}

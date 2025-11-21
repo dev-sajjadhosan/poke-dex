@@ -6,7 +6,7 @@ export default function GenerateCardSection() {
   const { setIsSection } = usePokeStore();
   return (
     <>
-      <div className="flex flex-col gap-3 items-center justify-center h-full w-full">
+      <div className="flex flex-col gap-5 items-center justify-center h-100 w-full">
         <h3 className="text-4xl">
           Generate Your <span className="font-family-audiowide!">CARD</span>
         </h3>

@@ -12,7 +12,7 @@ export default function Header() {
         <div className="flex flex-col">
           <div className="flex items-center gap-2">
             <img src="logo.png" alt="Pokedex" width={30} />
-            <h1 className="text-2xl font-family-audiowide! hidden md:flex">
+            <h1 className="text-2xl font-family-audiowide! flex">
               Poke-dex
             </h1>
           </div>

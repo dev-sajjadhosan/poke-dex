@@ -28,7 +28,7 @@ export default function ViewCard({ data }: ViewCardProps) {
           onClick={() => setPicture(data?.default ?? "")}
           className={`p-3 rounded-lg border-2 active:scale-95 transition-normal duration-100 cursor-pointer ${
             picture === data?.default
-              ? "border-neutral-500 bg-primary/70"
+              ? "border-neutral-500 bg-accent/70"
               : "border-transparent scale-90 bg-secondary"
           }`}
         />
@@ -40,8 +40,8 @@ export default function ViewCard({ data }: ViewCardProps) {
           onClick={() => setPicture(data?.shiny ?? "")}
           className={`p-3 rounded-lg border-2 active:scale-95 transition-normal duration-100 cursor-pointer ${
             picture === data?.shiny
-              ? "border-neutral-500 bg-primary/70"
-              : "border-transparent scale-90 bg-secondary"
+              ? "border-neutral-500 bg-accent/70"
+              : "border-transparent scale-90 bg-accent"
           }`}
         />
       </div>

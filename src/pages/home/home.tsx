@@ -38,9 +38,9 @@ export default function HomePage() {
 
   return (
     <>
-      <div className="flex flex-col gap-2 items-center justify-center h-full lg:h-screen">
+      <div className="flex flex-col gap-2 items-center justify-center min-h-screen">
         {isFind ? (
-          <div className="flex flex-col gap-1 w-11/12 h-full lg:h-11/12 bg-stone-200 dark:bg-stone-700 p-7 rounded-2xl shadow-2xs">
+          <div className="flex flex-col gap-1 w-11/12 min-h-full lg:h-11/12 bg-stone-200 dark:bg-stone-700 p-7 rounded-2xl shadow-2xs">
             {isSection === "search" ? (
               <SearchSection />
             ) : isSection === "generate-card" ? (
